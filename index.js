@@ -74,28 +74,3 @@
 // })
 
 // //we need to create a new file in dir1 and make a new file in dir1 with the copied content of new-file.txt
-
-
-const http = require('http');
-
-const server = http.createServer((req,res)=>{
-    res.setHeader('Content-Type','text/html');
-
-    if(req.url === '/login'){
-        res.write('<html><head><title>node.js HTTP Server</title></head><body>');
-        res.write('<h1>Hello,Login!!</h1>');
-        res.write('</body></html>');
-    }else{
-        res.write('<html><head><title>node.js HTTP Server</title></head><body>');
-        res.write('<h1>Hello World</h1>');
-        res.write('</body></html>');
-    }
-    res.end();
-})
-
-const port = 3000;
-const host = 'localhost';
-
-server.listen(port,host,()=>{
-    console.log(`Server is running at http://${host}:${port}`);
-});
